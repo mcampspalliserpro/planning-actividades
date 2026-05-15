@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planning Actividades</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Space Grotesk', sans-serif; background: #fff; padding: 32px 24px 48px; color: #222; }
+  h1 { font-family: 'Space Mono', monospace; font-size: 52px; font-weight: 700; letter-spacing: 6px; text-transform: uppercase; line-height: 1; margin-bottom: 10px; }
+  .rainbow { display: flex; gap: 6px; height: 5px; margin-bottom: 32px; }
+  .rainbow span { flex: 1; border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { border: 1px solid #ddd; padding: 10px 8px; vertical-align: top; }
+  th { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; background: #fff; padding: 12px 6px; }
+  .time-cell { font-size: 13px; font-weight: 700; color: #444; text-align: center; vertical-align: middle; white-space: nowrap; width: 62px; }
+  .act-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.3px; }
+  .badge-aquagym { background: #A8D8EA; color: #1a5f7a; }
+  .badge-yoga { background: #FFF3B0; color: #7a5c00; }
+  .badge-power { background: #F0F0F0; color: #444; }
+  .badge-pilates { background: #FFD6A5; color: #7a3a00; }
+  .badge-bundafit { background: #B7E4C7; color: #1b5e20; }
+  .badge-stretching { background: #FFCBA4; color: #7a3000; }
+  .badge-bodyjump { background: #FFE082; color: #5c4000; }
+  .badge-ciclo { background: #CFD8DC; color: #333; }
+  .badge-ludoteca { background: #FFB3C6; color: #7a0028; }
+  .badge-padel { background: #D4EDDA; color: #155724; }
+  .badge-tenis { background: #C3E6CB; color: #0d4a1f; }
+  .badge-new { background: #4CAF50; color: #fff; font-size: 9px; padding: 2px 7px; vertical-align: middle; margin-left: 4px; }
+  .participants { list-style: none; padding: 0; margin: 0; }
+  .participants li { font-size: 10.5px; color: #444; padding: 1.5px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.4; }
+  .participants li:last-child { border-bottom: none; }
+  .count { font-size: 10px; color: #888; margin-bottom: 4px; font-weight: 600; }
+  .torneo-cell { vertical-align: top; }
+  .pair-list { list-style: none; padding: 0; margin: 0; }
+  .pair-list li { font-size: 10px; color: #333; padding: 3px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.4; }
+  .pair-list li:last-child { border-bottom: none; }
+  .nivel { display: inline-block; font-size: 8.5px; background: #f5f5f5; border-radius: 4px; padding: 1px 5px; color: #666; margin-top: 1px; }
+  .nivel-jefe { background: #FFE082; color: #5c4000; }
+  .nivel-ya { background: #FFABAB; color: #7a0000; }
+  .nivel-ojito { background: #A8D8EA; color: #1a5f7a; }
+  .nivel-turista { background: #E0E0E0; color: #444; }
+  .cancelled { font-size: 11px; color: #bbb; font-style: italic; text-align: center; padding: 8px 0; }
+</style>
+</head>
+<body>
+<div class="title-block" style="margin-bottom:28px">
+  <h1>Planning Actividades</h1>
+  <div class="rainbow">
+    <span style="background:#4DB6AC"></span><span style="background:#FFD54F"></span>
+    <span style="background:#E57373"></span><span style="background:#64B5F6"></span>
+    <span style="background:#F48FB1"></span>
+  </div>
+</div>
+<table>
+  <colgroup>
+    <col style="width:62px"><col style="width:13%"><col style="width:10%">
+    <col style="width:10%"><col style="width:11%"><col style="width:10%">
+    <col style="width:10%"><col style="width:14%">
+  </colgroup>
+  <thead><tr>
+    <th></th><th>Pistas<br>Pádel</th><th>Pistas<br>Tenis</th>
+    <th>Piscina</th><th>Sala 3</th><th>Sala 2</th><th>Ciclo<br>Indoor</th><th>Ludoteca</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <td class="time-cell">10:00<br>10:45</td>
+    <td rowspan="3" class="torneo-cell">
+      <div class="act-badge badge-padel">Torneo Pádel</div>
+      <div class="count">25 parejas</div>
+      <ul class="pair-list">
+        <li>Adrià Jimenez Vidal<br><span class="nivel nivel-ojito">Ojito conmigo</span><br>+ JOAN SANS VIDAL<br><span class="nivel nivel-ojito">Ojito conmigo</span></li>
+        <li>Angel Triay Fernandez<br><span class="nivel nivel-ya">Ya le doy</span><br>+ Mario Triay Fernandez<br><span class="nivel nivel-ya">Ya le doy</span></li>
+        <li>Antonio Mora Pons<br><span class="nivel nivel-jefe">El jefe de la pista</span><br>+ Santiago Quevedo Olives<br><span class="nivel nivel-jefe">El jefe de la pista</span></li>
+        <li>Antonio Torrent Marques<br><span class="nivel nivel-turista">Modo turista</span><br>+ Marc Torrent Florit<br><span class="nivel nivel-jefe">El jefe de la pista</span></li>
+        <li>Carlos Juanico Vidal<br><span class="nivel nivel-turista">Modo turista</span><br>+ Sergi Juanico<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Carlos Olives Oleano<br><span class="nivel nivel-turista">Modo turista</span><br>+ Estefi Olives Curto<br><span class="nivel nivel-ya">Ya le doy</span></li>
+        <li>Carlos Palliser Sintes<br><span class="nivel nivel-turista">Modo turista</span><br>+ Rafi Romero<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Daniel Sintes Triay<br><span class="nivel nivel-turista">Modo turista</span><br>+ Auba Sintes Timoner<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>David Martin Arno<br><span class="nivel nivel-ojito">Ojito conmigo</span><br>+ Maria Mercadal Camps<br><span class="nivel nivel-ojito">Ojito conmigo</span></li>
+        <li>Didac Subirats Gonzalez<br><span class="nivel nivel-ya">Ya le doy</span><br>+ Rut Subirats Genestar<br><span class="nivel nivel-ya">Ya le doy</span></li>
+        <li>Elena Roses Boixareu<br><span class="nivel nivel-jefe">El jefe de la pista</span><br>+ Xavi Mir Mari<br><span class="nivel nivel-jefe">El jefe de la pista</span></li>
+        <li>Eva Bey Ekelschot<br><span class="nivel nivel-turista">Modo turista</span><br>+ Alberto Linares Bey<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>J.Carlos Sintes Triay<br><span class="nivel nivel-turista">Modo turista</span><br>+ Judith Sintes Grau<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Javi Ameller Seguí<br><span class="nivel nivel-ojito">Ojito conmigo</span><br>+ Josep Ameller Riudavets<br><span class="nivel nivel-ojito">Ojito conmigo</span></li>
+        <li>Javier Pons Sintes<br><span class="nivel nivel-turista">Modo turista</span><br>+ Aina Llorens Pons<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Jesús Piris Vidal<br><span class="nivel nivel-turista">Modo turista</span><br>+ Bárbara Andres Bolivar<br><span class="nivel nivel-ojito">Ojito conmigo</span></li>
+        <li>Lidia Salord Morales<br><span class="nivel nivel-ojito">Ojito conmigo</span><br>+ Miquel Lopez Coll<br><span class="nivel nivel-ojito">Ojito conmigo</span></li>
+        <li>Mandi Moya Olives<br><span class="nivel nivel-turista">Modo turista</span><br>+ Javier Benito Reviriego<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Maria del Mar Jiménez<br><span class="nivel nivel-ya">Ya le doy</span><br>+ Lucía Escudero Jiménez<br><span class="nivel nivel-ya">Ya le doy</span></li>
+        <li>Paco de Haro Juanico<br><span class="nivel nivel-ojito">Ojito conmigo</span><br>+ Constantino de Haro Juanico<br><span class="nivel nivel-ojito">Ojito conmigo</span></li>
+        <li>Rafael Segui Villalonga<br><span class="nivel nivel-ojito">Ojito conmigo</span><br>+ Esther Seguí Pons<br><span class="nivel nivel-ojito">Ojito conmigo</span></li>
+        <li>Seo Fortuny<br><span class="nivel nivel-turista">Modo turista</span><br>+ Selmo Fortuny<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Sergi Villalonga Carreras<br><span class="nivel nivel-turista">Modo turista</span><br>+ Samuel Llabres Palliser<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Xavi Moliner Huguet<br><span class="nivel nivel-ya">Ya le doy</span><br>+ Martí Moliner Camps<br><span class="nivel nivel-ya">Ya le doy</span></li>
+      </ul>
+    </td>
+    <td rowspan="3" class="torneo-cell">
+      <div class="act-badge badge-tenis">Torneo Tenis</div>
+      <div class="count">3 parejas</div>
+      <ul class="pair-list">
+        <li>Aitor Pons Llufriu<br><span class="nivel nivel-ya">Ya le doy</span><br>+ Jessica Gomila Villalonga<br><span class="nivel nivel-ya">Ya le doy</span></li>
+        <li>Flaminia Jeschke<br><span class="nivel nivel-turista">Modo turista</span><br>+ Ritsuki Ichimiya<br><span class="nivel nivel-turista">Modo turista</span></li>
+        <li>Pedro Timoner Mascaró<br><span class="nivel nivel-turista">Modo turista</span><br>+ Pere Guasch Melià<br><span class="nivel nivel-turista">Modo turista</span></li>
+      </ul>
+    </td>
+    <td><div class="act-badge badge-aquagym">Aquagym</div><div class="count">3 personas</div><ul class="participants"><li>Celi Gomila Sintes</li><li>Pablo Taltavull Julien</li><li>Victoria Claire Julien</li></ul></td>
+    <td><div class="act-badge badge-yoga">Yoga</div><div class="count">10 personas</div><ul class="participants"><li>Aurelo Padori</li><li>Begoña Samper Mercadal</li><li>Carolina Gil Moll</li><li>Cristina Timoner Juanico</li><li>Eva Gonzàlez Piris</li><li>Gabriel Triay Tuduri</li><li>Iván Laso Fernández</li><li>Marga Camps Carreras</li><li>Marga Cardona Gonyalons</li><li>Veronica Mesa</li></ul></td>
+    <td><div class="act-badge badge-power">Power</div><div class="count">4 personas</div><ul class="participants"><li>Anabel Serrano Almagro</li><li>Mari Gomila</li><li>Maria Urbano Coll</li><li>Vanessa Pons Pons</li></ul></td>
+    <td><p class="cancelled">Cancelado</p></td>
+    <td rowspan="3"><div class="act-badge badge-ludoteca">Ludoteca 3-12 años</div><div class="count">30 niños</div><ul class="participants"><li>Adria Marti Mascaro</li><li>Aiza Robles Gascon</li><li>ALIS DE HARO MOYA</li><li>Blanca Benito Serrano</li><li>Bruna Sintes Catchot</li><li>Carlos Benito Serrano</li><li>Carlota Hdez. Castellanos</li><li>Claudia Mir Rosés</li><li>Edgar Gomez</li><li>Gael Laso Samper</li><li>ILEA DE HARO MOYA</li><li>IRUNE PIRIS ROGERO</li><li>Jan Quevedo Benitez</li><li>Juan Fernandez Díaz</li><li>KIRA DEL CAMPO CANTUCHE</li><li>Lorena Robles Gascon</li><li>Mar Chornet Genestar</li><li>Marcel·la Sintes Catchot</li><li>MIKEL PIRIS ROGERO</li><li>Neus Palliser Romero</li><li>Odalis Robles Gascon</li><li>Ona González Pons</li><li>Paula Marti Mascaro</li><li>Paula Pons Gomila</li><li>Pol Pons Gomila</li><li>Quin Hdez. Castellanos</li><li>Santi Mir Rosés</li><li>Sílvia Palliser Romero</li><li>Sofía Fernández Díaz</li><li>Vera Gomez</li></ul></td>
+  </tr>
+  <tr>
+    <td class="time-cell">11:00<br>11:45</td>
+    <td><div class="act-badge badge-aquagym">Aquagym</div><div class="count">7 personas</div><ul class="participants"><li>Antoni Fanals Pons</li><li>Carolina Gil Moll</li><li>Elvira Sintes Gimenez</li><li>Francina Fortuny</li><li>Gabriel Triay Tuduri</li><li>Roser Fortuny</li><li>Sara Sintes Seguí</li></ul></td>
+    <td><div class="act-badge badge-pilates">Pilates</div><div class="count">16 personas</div><ul class="participants"><li>Aiza Robles Gascon</li><li>Anabel Serrano Almagro</li><li>CAROL MARCOS</li><li>Ernesto Vadell Pons</li><li>Eva Gonzàlez Piris</li><li>INES BENITEZ PASCUAL</li><li>Ivan Sintes Pons</li><li>Juana Cardona Juanico</li><li>Lorena Robles Gascon</li><li>Marga Cardona Gonyalons</li><li>Maria Cantuche de la Torre</li><li>MONICA PALLISER PIRIS</li><li>Mª Pilar Senovilla Gilsanz</li><li>Odalis Robles Gascon</li><li>Rosario Sanchez Seguí</li><li>Silvia Fernández</li></ul></td>
+    <td><div class="act-badge badge-bundafit">Bundafit <span class="act-badge badge-new">NEW</span></div><div class="count">2 personas</div><ul class="participants"><li>Marga Camps Carreras</li><li>Mari Gomila</li></ul></td>
+    <td><div class="act-badge badge-ciclo">Ciclo Indoor</div><div class="count">4 personas</div><ul class="participants"><li>Begoña Samper Mercadal</li><li>Iván Laso Fernández</li><li>Olivia Laso Samper</li><li>Xec Caules Ameller</li></ul></td>
+  </tr>
+  <tr>
+    <td class="time-cell">12:00<br>12:45</td>
+    <td><div class="act-badge badge-aquagym">Aquagym</div><div class="count">4 personas</div><ul class="participants"><li>Anabel Serrano Almagro</li><li>Ines Benitez Pascual</li><li>Maribel Gelabert Coll</li><li>Salvador Sintes Sintes</li></ul></td>
+    <td><div class="act-badge badge-stretching">Stretching</div><div class="count">4 personas</div><ul class="participants"><li>Mandi Catchot Seguí</li><li>Marga Cardona Gonyalons</li><li>Marga Grau Florit</li><li>Mari Gomila</li></ul></td>
+    <td><div class="act-badge badge-bodyjump">BodyJump</div><div class="count">7 personas</div><ul class="participants"><li>Aiza Robles Gascon</li><li>Begoña Samper Mercadal</li><li>Lorena Robles Gascon</li><li>Marga Camps Carreras</li><li>Odalis Robles Gascon</li><li>Olivia Laso Samper</li><li>Vanessa Pons Pons</li></ul></td>
+    <td><div class="act-badge badge-ciclo">Ciclo Indoor</div><div class="count">2 personas</div><ul class="participants"><li>CAROL MARCOS</li><li>Maria Cantuche de la Torre</li></ul></td>
+  </tr>
+  </tbody>
+</table>
+<p style="margin-top:16px;font-size:11px;color:#888;"><strong>Sala Musculación</strong> — Libre acceso toda la mañana.</p>
+</body></html>
